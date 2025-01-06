@@ -1,0 +1,133 @@
+{
+  "margin-top" : 5,
+    "margin-left": 10,
+    "margin-right": 10,
+    "height" : 30,
+    "modules-left": [
+      "tray",
+      "hyprland/window"
+    ],
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
+    "modules-right": [
+    "wireplumber",
+    "network",
+    "temperature",
+    "battery",
+    "clock",
+   // "hyprland/language",
+    "custom/powermenu"
+    ],
+    "hypland/language": {
+      "format": "{}"
+    },
+    "hyprland/window": {
+      "format": " {}",
+      "max-length": 20,
+      "rewrite": {
+        " ": "yoooo"
+      },
+      "separate-outputs": true
+    },
+    "hyprland/workspaces": {
+      "format": "{icon}",
+      "on-click": "activate",
+      "format-icons": {
+        "active": " "
+      },
+      "sort-by-number": true,
+      "persistent-workspaces": {
+        "*": 4, // 5 workspaces by default on every monitor
+        "HDMI-A-1": 3 // but only three on HDMI-A-1
+      }
+    },
+    "clock": {
+    "format": "<b>{:L%I:%M %p | %A | %d/%m/%y}</b>",
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode"          : "year",
+      "mode-mon-col"  : 3,
+      "weeks-pos"     : "right",
+      "on-scroll"     : 1,
+      "format": {
+        "months":     "<span color='#ffead3'><b>{}</b></span>",
+        "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+        "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions":  {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+    },
+    "cpu": {
+      "format": "  {usage}%",
+      "tooltip": false
+    },
+    "memory": {
+      "format": "{}%  "
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": [
+            "<span color='#507f00'></span>",
+            "",
+            "<span color='#ff4000'></span>"
+        ]
+    },
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon}  {capacity}%",
+      "format-full": "{icon}  {capacity}%",
+      "format-charging": "  {capacity}%",
+      "format-plugged": "  {capacity}%",
+      "format-alt": "{time} {icon}",
+      "format-icons": ["", "", "", "", ""]
+    },
+    "network":{
+      //"interface": "wlp3s0",
+      "format-wifi": "  {essid}",
+      "format-alt": "  {bandwidthTotalBits}",
+      "format-ethernet": "<big>󰈀</big> wired",
+      "format-disconnected": "<big>⟁</big>",
+      "tooltip-format": "{essid} {signalStrength}%",
+      "tooltip-format-disconnected": "Disconnected",
+      "on-click-right": "nm-connection-editor"
+},
+    "wireplumber": {
+      "format": "{icon}  {volume}%",
+      "format-bluetooth": "{volume}% {icon} {format_source}",
+      "format-bluetooth-muted": " {icon} {format_source}",
+      "format-muted": "",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": ["", "", ""]
+      },
+      "on-click": "helvum"
+    },
+    "custom/powermenu": {
+    "format": "  ",
+    "tooltip": false,
+    "on-click": "exec wlogout -p layer-shell"
+    },
+    "tray": {
+	"format": "{}",
+        "icon-size": 19,
+        "spacing": 10
+    }
+}

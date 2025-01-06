@@ -1,0 +1,6 @@
+[user]
+	name = Platon U.
+	email = revlze@yahoo.com
+[core]
+	editor = nvim
+	pager = cat
