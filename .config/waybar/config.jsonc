@@ -11,14 +11,23 @@
       "hyprland/workspaces"
     ],
     "modules-right": [
-    "wireplumber",
-    "network",
-    "temperature",
-    "battery",
-    "clock",
+	"custom/profile",
+	"wireplumber",
+	"network",
+        "temperature",
+        "battery",
+        "clock",
    // "hyprland/language",
     "custom/powermenu"
     ],
+    "custom/profile": {
+    //shows the current power profile and switches to next on click
+    "exec": "asusctl profile -p | sed s:'Starting version 6.1.0-rc3'::",
+    "interval": 30,
+    "format": "<big>󰈐</big> ",
+    "on-click": "asusctl profile -n; pkill -SIGRTMIN+8 waybar"
+    
+    },
     "hypland/language": {
       "format": "{}"
     },
@@ -84,12 +93,13 @@
     },
     "battery": {
       "states": {
+	"good": 90,
         "warning": 30,
         "critical": 15
       },
       "format": "{icon}  {capacity}%",
       "format-full": "{icon}  {capacity}%",
-      "format-charging": "  {capacity}%",
+      "format-charging": "  {capacity}%",
       "format-plugged": "  {capacity}%",
       "format-alt": "{time} {icon}",
       "format-icons": ["", "", "", "", ""]

@@ -79,6 +79,10 @@ button:hover {
   color: @sky;
 }
 
+#custom-profile {
+  color: #1f5dc2;
+}
+
 #battery {
   color: @green;
 }
