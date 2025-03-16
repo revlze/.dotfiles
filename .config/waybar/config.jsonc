@@ -11,13 +11,13 @@
       "hyprland/workspaces"
     ],
     "modules-right": [
-	"custom/profile",
+//	"custom/profile",
 	"wireplumber",
 	"network",
         "temperature",
         "battery",
         "clock",
-   // "hyprland/language",
+//        "hyprland/language",
     "custom/powermenu"
     ],
     "custom/profile": {
@@ -29,7 +29,10 @@
     
     },
     "hypland/language": {
-      "format": "{}"
+      //"format": "{}",
+      "format-en": "US",
+      "format-ru": "RU",
+      "keyboard-name": "keychron-k3-pro-keyboard"
     },
     "hyprland/window": {
       "format": " {}",
@@ -128,7 +131,8 @@
         "car": "",
         "default": ["", "", ""]
       },
-      "on-click": "helvum"
+      "on-click": "helvum",
+      "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "custom/powermenu": {
     "format": "  ",
@@ -137,7 +141,7 @@
     },
     "tray": {
 	"format": "{}",
-        "icon-size": 19,
-        "spacing": 10
+        "icon-size": 18,
+        "spacing": 9
     }
 }

@@ -8,8 +8,8 @@ SECOND_MONITOR_CONNECTED=$(eval $SECOND_MONITOR_CHECK)
 
 if [ "$SECOND_MONITOR_CONNECTED" -eq 1 ]; then
     # Если второй монитор подключен, отключаем экран ноутбука
+    hyprctl keyword monitor DP-2, 2560x1440@143.98, 0x0, 1
+    sleep 2
     hyprctl keyword monitor eDP-1, disable
-
-    # Если второй монитор не подключен, ничего не делаем
 fi
 
