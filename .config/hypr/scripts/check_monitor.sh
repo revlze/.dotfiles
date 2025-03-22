@@ -11,5 +11,8 @@ if [ "$SECOND_MONITOR_CONNECTED" -eq 1 ]; then
     hyprctl keyword monitor DP-2, 2560x1440@143.98, 0x0, 1
     sleep 2
     hyprctl keyword monitor eDP-1, disable
+
+else
+    hyprctl keyword monitor eDP-1, 1920x1080@144, 0x0, 1
 fi
 
